@@ -17,9 +17,9 @@ cl = XhsCli.get_clinet()
 # print(cl.get_user_info("64ca3f22000000000e024ea8"))
 # list = cl.get_user_all_notes(user_id="64ca3f22000000000e024ea8")
 # print(cl.save_note_by_id("657fa6e5000000003c011acf", dir_path="D:/xhs"))
-for item in list:
-    cl.save_user_all_notes(user_id=item, dir_path="D:/xhs", crawl_interval = 0)
-# cl.create_image_note_by_path(r"D:\xhs")
+# for item in list:
+#     cl.save_user_all_notes(user_id=item, dir_path="D:/xhs", crawl_interval = 0)
+cl.create_image_note_by_path(r"D:\xhs")
 # key = ""
 # download_by_search
 # cl.save_search_notes(key= "三亚", dir_path="D:/xhs", crawl_interval = 0)

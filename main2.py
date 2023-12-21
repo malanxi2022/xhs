@@ -18,8 +18,13 @@ cl = XhsCli.get_clinet()
 # list = cl.get_user_all_notes(user_id="64ca3f22000000000e024ea8")
 # print(cl.save_note_by_id("657fa6e5000000003c011acf", dir_path="D:/xhs"))
 # 5b3828c86b58b75e1a27b136
-cl.save_user_all_notes(user_id="5b89698af2a6c5000118e087", dir_path="D:/xhs", crawl_interval = 0)
+# cl.save_user_all_notes(user_id="5b89698af2a6c5000118e087", dir_path="D:/xhs", crawl_interval = 0)
 # cl.create_image_note_by_path(r"D:\xhs")
 # key = ""
 # download_by_search
 # cl.save_search_notes(key= "三亚", dir_path="D:/xhs", crawl_interval = 0)
+
+
+note = cl.create_video_note(title="123123", video_path=r"E:\test\11.mp4", desc="",
+
+                                    is_private=True)

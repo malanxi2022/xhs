@@ -881,6 +881,12 @@ class XhsClient:
         print(data)
         return self.post(uri, data, headers=headers)
 
+    def contains_chinese(self, input_str):
+        for char in input_str:
+            if '\u4e00' <= char <= '\u9fff':
+                return True
+        return False
+
     def create_image_note_by_path(self, path):
         for root, dirs, files in os.walk(path):
             try:
@@ -900,11 +906,13 @@ class XhsClient:
                             with open(root + "/" + file, 'r', encoding="utf8") as f:
                                 desc = f.read().split("----------------------------------")[0]
                                 desc = desc.split("![")[0]
+                    if not self.contains_chinese(title): title = "开心消消乐"+ str(time.time())
                     if SQL_UTILS.contains(title, SQL_UTILS.ADD): continue
                     print(title)
                     if (video_path is not None):
-                        data = self.create_video_note(title=title.encode('unicode-escape').decode('utf-8'), video_path=video_path, desc=desc,
-                                          is_private=False)
+                        continue
+                        # data = self.create_video_note(title=title.encode('unicode-escape').decode('utf-8'), video_path=video_path, desc=desc,
+                        #                   is_private=False)
                     else:
                         data = self.create_image_note(title, desc, images, is_private=False)
                     SQL_UTILS.insert_data(title, json.dumps(data), SQL_UTILS.ADD)

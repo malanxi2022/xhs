@@ -9,12 +9,14 @@ class SQL_UTILS:
     ADD = "add"
     @staticmethod
     def insert_data( name, data, type):
+        name = name.replace("'", "")
         sql = f"INSERT INTO 'add' ('name', 'data', 'type') VALUES ('{name}', '{data}','{type}');"
         cur = con.cursor()
         cur.execute(sql)
         con.commit()
     @staticmethod
     def get_data( name, type):
+        name = name.replace("'", "")
         sql = f"select * from 'add' where name = '{name}' and type = '{type}'";
         cur = con.cursor()
         cur.execute(sql)
@@ -22,6 +24,7 @@ class SQL_UTILS:
 
     @staticmethod
     def contains( name, type):
+        name = name.replace("'", "")
         sql = f"select * from 'add' where name = '{name}' and type = '{type}'";
         cur = con.cursor()
         cur.execute(sql)
