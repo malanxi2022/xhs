@@ -11,10 +11,15 @@ os.environ['HTTP_PROXY'] = 'http://127.0.0.1:7890'
 cl = XhsCliMA.get_clinet()
 
 # print(cl.get_user_all_note_ids("5b3828c86b58b75e1a27b136"))
-data = cl.get_note_by_keyword(keyword="", sort=SearchSortType.LATEST)
-for item in data["items"]:
-    note_id = item["id"]
-    # user_id = item["note_card"]["user"]["user_id"]
-    cl.comment_note(note_id, "")
-    # cl.like_note(note_id)
-    #
+list = []
+for i in range(1, 10):
+    data = cl.get_note_by_keyword(keyword="", sort=SearchSortType.GENERAL, page=i, page_size=20)
+    list = list + data["items"]
+for item in list:
+    try:
+        note_id = item["id"]
+        # user_id = item["note_card"]["user"]["user_id"]
+        cl.comment_note(note_id, "")
+        cl.like_note(note_id)
+    except Exception as e:
+        print(e)

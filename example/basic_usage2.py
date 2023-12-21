@@ -39,5 +39,5 @@ class XhsCliMA():
 
     @staticmethod
     def get_clinet():
-        cookie = "1abRequestId=3ecafc7f-67ab-5722-b865-74fcf277f25e; webBuild=3.20.3; xsecappid=xhs-pc-web; a1=18c8697c15dok0bjvyk0yxutvkneq34dlzd95hojd50000311063; webId=444a29365e2641038f2951f6faf9eaf5; websectiga=cf46039d1971c7b9a650d87269f31ac8fe3bf71d61ebf9d9a0a87efb414b816c; sec_poison_id=ec33d1d0-1700-4ae5-87d5-a4a7565f69fd; gid=yYSYKjWSKj14yYSYKjWSyuxl2flT8DVhvT8vfVfC79hTIj28dAq4f2888qyy8Kq82diiYiyY; web_session=040069b17f4ac356eb4827feb7374bc0b97946; unread={%22ub%22:%22658178e6000000000700a55e%22%2C%22ue%22:%2265816ac200000000060283ff%22%2C%22uc%22:22}"
+        cookie = "a1=18c8bd11e38qpzzgmdnfjssvqtsehi1p0i156infz50000395480; webId=30824e869da08c6274c585713b4319f2; websectiga=29098a4cf41f76ee3f8db19051aaa60c0fc7c5e305572fec762da32d457d76ae; sec_poison_id=b876ce47-a871-4ba9-ad8a-91d0d5db79ac; gid=yYSYDfyyij8WyYSYDfyyd33IqYAUuuk6fIiVyiuMMhA9M228dx3yUK888qj24Y88y4qDYKqy; abRequestId=30824e869da08c6274c585713b4319f2; webBuild=3.21.1; xsecappid=xhs-pc-web; web_session=040069b3715a7c5bc860ad44b1374bb3884b1b; unread={%22ub%22:%22658065020000000006023985%22%2C%22ue%22:%226583aa5c000000003801ff36%22%2C%22uc%22:29}"
         return XhsClient(cookie, sign=sign)
